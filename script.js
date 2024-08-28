@@ -11,13 +11,13 @@ window.addEventListener('load', function() {
 });
 
 function downloadLatestVersion() {
-    fetch('https://raw.githubusercontent.com/Kob123678/PulseX-v1/main/pulsex.txt')
+    fetch('https://raw.githubusercontent.com/PulseX-executor/PulseX-executor.github.io/main/links/pulsex.txt')
         .then(response => response.text())
         .then(url => window.open(url.trim(), '_blank'));
 }
 
 function downloadOpenSource() {
-    fetch('https://raw.githubusercontent.com/Kob123678/PulseX-v1/main/source.txt')
+    fetch('https://raw.githubusercontent.com/PulseX-executor/PulseX-executor.github.io/main/links/source.txt')
         .then(response => response.text())
         .then(url => window.open(url.trim(), '_blank'));
 }
