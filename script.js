@@ -23,7 +23,7 @@ function downloadOpenSource() {
 }
 
 function moreInformation() {
-    window.open('https://github.com/Kob123678/PulseX-v1', '_blank');
+    window.open('https://github.com/nvkob1/Pulsex-v1', '_blank');
 }
 
 // Theme toggle functionality
