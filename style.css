@@ -74,8 +74,6 @@ body {
     transition: opacity 0.5s ease-in;
 }
 
-/* Rest of your existing CSS styles... */
-
 /* Theme Toggle Switch */
 .theme-toggle-container {
     position: absolute;
