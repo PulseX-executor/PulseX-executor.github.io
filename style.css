@@ -13,6 +13,9 @@
     --input-border-color: #ddd;
     --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     --loader-color: #007BFF;
+    --discontinued-bg: #ffdddd;
+    --discontinued-text: #cc0000;
+    --discontinued-border: #ff5555;
 }
 
 [data-theme="dark"] {
@@ -27,6 +30,9 @@
     --input-border-color: #444444;
     --box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     --loader-color: #BB86FC;
+    --discontinued-bg: #3a0000;
+    --discontinued-text: #ff5555;
+    --discontinued-border: #cc0000;
 }
 
 /* General Styles */
@@ -37,6 +43,31 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+}
+
+/* Discontinued Banner */
+.discontinued-banner {
+    background-color: var(--discontinued-bg);
+    color: var(--discontinued-text);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--discontinued-border);
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+}
+
+.discontinued-banner h2 {
+    margin: 0 0 10px 0;
+}
+
+.discontinued-banner p {
+    margin: 0;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
 }
 
 /* Loading Overlay */
@@ -159,14 +190,19 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+button:hover:not([disabled]) {
     background-color: var(--btn-hover-bg-color);
     transform: var(--btn-hover-transform);
 }
 
-button:active {
+button:active:not([disabled]) {
     background-color: var(--btn-active-bg-color);
     transform: var(--btn-active-transform);
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 footer {
