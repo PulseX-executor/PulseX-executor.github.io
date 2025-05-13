@@ -11,15 +11,23 @@ window.addEventListener('load', function() {
 });
 
 function downloadLatestVersion() {
-    fetch('https://raw.githubusercontent.com/PulseX-executor/PulseX-executor.github.io/main/links/pulsex.txt')
-        .then(response => response.text())
-        .then(url => window.open(url.trim(), '_blank'));
+    alert("PulseX has been discontinued and is no longer available for download.");
 }
 
 function downloadOpenSource() {
     fetch('https://raw.githubusercontent.com/PulseX-executor/PulseX-executor.github.io/main/links/source.txt')
         .then(response => response.text())
-        .then(url => window.open(url.trim(), '_blank'));
+        .then(url => {
+            if (url.trim()) {
+                window.open(url.trim(), '_blank');
+            } else {
+                alert("Archive link is no longer available. This project has been discontinued.");
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching source URL:', error);
+            alert("Failed to access archive link. This project has been discontinued.");
+        });
 }
 
 function moreInformation() {
